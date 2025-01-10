@@ -21,21 +21,18 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Check if user is already registered
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
     if (storedUserData) {
       alert('You are already registered and logged in!');
-      navigate('/'); // Redirect to login if already registered
+      navigate('/');
       return;
     }
 
-    // Save form data to local storage
     localStorage.setItem('userData', JSON.stringify(formData));
     console.log('Form Data Submitted and Saved to Local Storage:', formData);
     
-    // Optional: Log in the user after registration
     alert('Registration successful! You can now log in.');
-    navigate('/'); // Redirect to login page
+    navigate('/'); 
   };
 
   return (

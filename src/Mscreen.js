@@ -3,17 +3,17 @@ import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 
 const Mscreen = () => {
-    const [inputText, setInputText] = useState(""); // Temporary input value
-    const [texts, setTexts] = useState([]); // Array to store all entered texts
+    const [inputText, setInputText] = useState(""); 
+    const [texts, setTexts] = useState([]); 
 
     const handleInputChange = (e) => {
-        setInputText(e.target.value); // Update the temporary input value
+        setInputText(e.target.value);
     };
 
     const handleKeyPress = (e) => {
-        if (e.key === "Enter" && inputText.trim() !== "") { // Check if Enter is pressed and input is not empty
-            setTexts([...texts, inputText]); // Add the current input to the texts array
-            setInputText(""); // Clear the input field
+        if (e.key === "Enter" && inputText.trim() !== "") { 
+            setTexts([...texts, inputText]);
+            setInputText(""); 
         }
     };
 
@@ -32,7 +32,7 @@ const Mscreen = () => {
 
                 <div className="left-8">
                     {texts.map((text, index) => (
-                        <p key={index} className="right-15">{text}</p> // Render each text in its own <p> tag
+                        <p key={index} className="right-15">{text}</p> 
                     ))}
                 </div>
 
@@ -40,9 +40,9 @@ const Mscreen = () => {
                     className="right-4"
                     type="text"
                     placeholder="Type Something heretyui"
-                    value={inputText} // Bind the input value to state
-                    onChange={handleInputChange} // Update the state on input change
-                    onKeyDown={handleKeyPress} // Listen for the Enter key press
+                    value={inputText} 
+                    onChange={handleInputChange} 
+                    onKeyDown={handleKeyPress} 
                 />
             </div>
         </div>

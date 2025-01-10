@@ -31,7 +31,7 @@ const Max = () => {
     const toggleSettings = () => {
         setActiveScreen(activeScreen === "Settings" ? "Nscreen" : "Settings");
     };
-    const handleHomeSize=()=>{
+    const handleHomeSize = () => {
         navigate("/home")
     }
 
@@ -45,7 +45,7 @@ const Max = () => {
                     <span onClick={handleBackFormMax} ><RxCross2 /></span>
                 </div>
             </div>
-           <Rightvar/>
+            <Rightvar />
         </div>
     );
 };

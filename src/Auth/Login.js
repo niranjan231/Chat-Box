@@ -19,13 +19,11 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate email and password
     if (formData.email === '' || formData.password === '') {
       alert('Please fill out all fields');
       return;
     }
 
-    // Retrieve stored user data from local storage
     const storedUserData = JSON.parse(localStorage.getItem('userData'));
 
     if (
@@ -36,22 +34,20 @@ const Login = () => {
       alert('Login successful!');
       console.log('Logged In:', formData);
       
-      // Save login status in local storage
       localStorage.setItem('isLoggedIn', 'true');
-      navigate('/chatbox'); // Redirect to ChatBox after login
+      navigate('/chatbox'); 
     } else {
       alert('Invalid email or password');
     }
 
-    // Optional: Reset form fields
     setFormData({ email: '', password: '' });
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('isLoggedIn'); // Clear login status
-    localStorage.removeItem('userData'); // Optionally clear user data
+    localStorage.removeItem('isLoggedIn'); 
+    localStorage.removeItem('userData'); 
     alert('Logged out successfully!');
-    navigate('/'); // Redirect to login or home page
+    navigate('/'); 
   };
 
   return (
@@ -93,7 +89,7 @@ const Login = () => {
           Login
         </button>
       </form>
-      <button onClick={() => navigate('/register')} // Redirect to register page
+      <button onClick={() => navigate('/register')}
         style={{ padding: '10px 15px', background: 'green', color: 'white', border: 'none', borderRadius: '5px' }}
       >
         Sign Up

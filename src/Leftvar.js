@@ -19,37 +19,37 @@ const Leftvar = ({ handleBack }) => {
     const [showAccountMenu, setShowAccountMenu] = useState(false);
     const [showNotificationMenu, setShowNotificationMenu] = useState(false);
     const [showHelpSection, setShowHelpSection] = useState(false);
-    const [showSettings, setShowSettings] = useState(false); // Track settings visibility
-    const [fetchingLocation, setFetchingLocation] = useState(false); // Track if fetching location
+    const [showSettings, setShowSettings] = useState(false); 
+    const [fetchingLocation, setFetchingLocation] = useState(false); 
 
     const showNscreen = () => {
         setActiveScreen("Nscreen");
-        setShowSettings(false); // Close settings when Nscreen is shown
-        setShowHelpSection(false); // Close help when Nscreen is shown
+        setShowSettings(false);
+        setShowHelpSection(false);
     };
 
     const toggleSettings = () => {
         if (showSettings) {
-            setShowSettings(false); // Close settings if it is currently open
+            setShowSettings(false); 
         } else {
-            setShowSettings(true); // Open settings and close help section
-            setShowHelpSection(false); // Ensure help section is closed
+            setShowSettings(true);
+            setShowHelpSection(false); 
         }
     };
 
     const handleLocationClick = () => {
         if (navigator.geolocation) {
-            setFetchingLocation(true); // Start fetching location
+            setFetchingLocation(true); 
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
                     setLocation({ latitude, longitude });
-                    setFetchingLocation(false); // Stop fetching location
+                    setFetchingLocation(false);
                 },
                 (error) => {
                     console.error("Error fetching location: ", error.message);
                     alert("Unable to fetch location. Please check your permissions.");
-                    setFetchingLocation(false); // Stop fetching location
+                    setFetchingLocation(false); 
                 }
             );
         } else {
@@ -67,10 +67,10 @@ const Leftvar = ({ handleBack }) => {
 
     const handleHelpClick = () => {
         if (showHelpSection) {
-            setShowHelpSection(false); // Close help if it's currently open
+            setShowHelpSection(false);
         } else {
-            setShowHelpSection(true); // Open help section and close settings
-            setShowSettings(false); // Ensure settings section is closed
+            setShowHelpSection(true); 
+            setShowSettings(false); 
         }
     };
 
@@ -125,7 +125,7 @@ const Leftvar = ({ handleBack }) => {
                                     height: "30px",
                                     backgroundColor: fetchingLocation ? "green" : "gray", // Change color based on fetchingLocation
                                     borderRadius: "30%",
-                                    border: "2px solid black" // Add solid black border
+                                    border: "2px solid black" 
                                 }}
                             ></span>
                         </div>
@@ -144,9 +144,9 @@ const Leftvar = ({ handleBack }) => {
                     </div>
                 ) : null}
 
-                {showHelpSection && ( // Conditionally render the help section
+                {showHelpSection && (
                     <div style={{ marginTop: "20px", marginLeft: "20px" }}>
-                        <h4>Question 1 here</h4>
+                        <h4>Question 10 here</h4>
                         <h4>Question 2 here</h4>
                         <h4>Question 3 here</h4>
                         <h4>Question 4 here</h4>

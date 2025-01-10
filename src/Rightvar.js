@@ -15,13 +15,13 @@ import Mscreen from "./Mscreen";
 const Rightvar = ({ handleBack }) => {
 
 
-    
-    const [fetchingLocation, setFetchingLocation] = useState(false); // Track if fetching location
+
+    const [fetchingLocation, setFetchingLocation] = useState(false);
     const navigate = useNavigate();
-    const [activeScreen, setActiveScreen] = useState("Nscreen"); // 'Nscreen' or 'Settings'
-    const [location, setLocation] = useState(null); // To store user location
-    const [showAccountMenu, setShowAccountMenu] = useState(false); // To toggle account menu text
-    const [showNotificationMenu, setShowNotificationMenu] = useState(false); // To toggle notification menu text
+    const [activeScreen, setActiveScreen] = useState("Nscreen");
+    const [location, setLocation] = useState(null);
+    const [showAccountMenu, setShowAccountMenu] = useState(false);
+    const [showNotificationMenu, setShowNotificationMenu] = useState(false);
 
     const showNscreen = () => {
         setActiveScreen("Nscreen");
@@ -36,7 +36,7 @@ const Rightvar = ({ handleBack }) => {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    setLocation({ latitude, longitude }); // Save location to state
+                    setLocation({ latitude, longitude });
                 },
                 (error) => {
                     console.error("Error fetching location: ", error.message);
@@ -49,11 +49,11 @@ const Rightvar = ({ handleBack }) => {
     };
 
     const handleAccountClick = () => {
-        setShowAccountMenu(!showAccountMenu); // Toggle the account menu text
+        setShowAccountMenu(!showAccountMenu);
     };
 
     const handleNotificationClick = () => {
-        setShowNotificationMenu(!showNotificationMenu); // Toggle the notification menu text
+        setShowNotificationMenu(!showNotificationMenu);
     };
 
     return (
@@ -111,7 +111,7 @@ const Rightvar = ({ handleBack }) => {
                                     height: "30px",
                                     backgroundColor: fetchingLocation ? "green" : "gray", // Change color based on fetchingLocation
                                     borderRadius: "30%",
-                                    border: "2px solid black" // Add solid black border
+                                    border: "2px solid black"
                                 }}
                             ></span>
                         </div>

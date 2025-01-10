@@ -10,7 +10,7 @@ import Login from './Auth/Login';
 
 function App() {
   const navigate = useNavigate()
-  const handleBackFormMax=()=>{
+  const handleBackFormMax = () => {
     Navigate("./")
   }
   return (
@@ -20,10 +20,10 @@ function App() {
         }
         />
         <Route path='/chatbox' element={<Chaticon />} />
-        <Route path='/max' element={<div className="app-2"> <Max handleBackFormMax ={handleBackFormMax} /></div>
+        <Route path='/max' element={<div className="app-2"> <Max handleBackFormMax={handleBackFormMax} /></div>
         } />
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/' element={<Login/>}/>
+        <Route path='/register' element={<Register />} />
+        <Route path='/' element={<Login />} />
 
       </Routes>
       {/* <Register/> */}
