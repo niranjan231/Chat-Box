@@ -2,7 +2,7 @@ import "./App.css";
 import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 
-const Nscreen = () => {
+const Mscreen = () => {
     const [inputText, setInputText] = useState(""); // Temporary input value
     const [texts, setTexts] = useState([]); // Array to store all entered texts
 
@@ -19,7 +19,7 @@ const Nscreen = () => {
 
     return (
         <div>
-            <div className="left-3">
+            <div className="right-3">
                 <div className="left-6">
                     <div className="left-5">
                         <span><FaUser /></span><p>Hi</p>
@@ -32,14 +32,14 @@ const Nscreen = () => {
 
                 <div className="left-8">
                     {texts.map((text, index) => (
-                        <p key={index} className="left-9">{text}</p> // Render each text in its own <p> tag
+                        <p key={index} className="right-15">{text}</p> // Render each text in its own <p> tag
                     ))}
                 </div>
 
                 <input
-                    className="left-input"
+                    className="right-4"
                     type="text"
-                    placeholder="Type Something here..."
+                    placeholder="Type Something heretyui"
                     value={inputText} // Bind the input value to state
                     onChange={handleInputChange} // Update the state on input change
                     onKeyDown={handleKeyPress} // Listen for the Enter key press
@@ -48,4 +48,5 @@ const Nscreen = () => {
         </div>
     );
 };
-export default Nscreen;
+
+export default Mscreen;

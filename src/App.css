@@ -1,18 +1,21 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-.icon-1{
+
+.icon-1 {
   display: flex;
   justify-content: flex-end;
   margin-top: 500px;
   margin-right: 45px;
 }
-.icon-1 span{
+
+.icon-1 span {
   font-size: 50px;
   color: rgb(13, 84, 84);
 }
-.nor-1{
+
+.nor-1 {
   width: 400px;
   height: 50px;
   background-color: rgb(40, 40, 161);
@@ -21,33 +24,38 @@
   align-items: center;
   /* border-radius: 10px; */
   margin-left: 10px;
-  
+
 }
-.nor-1 h5{
+
+.nor-1 h5 {
   color: white;
   font-size: 18px;
   font-weight: 800;
   margin-left: 10px;
 
 }
-.max-1 h5{
+
+.max-1 h5 {
   color: white;
   font-size: 18px;
   font-weight: 800;
   margin-left: 10px;
 
 }
-.nor-2{
+
+.nor-2 {
   display: flex;
   gap: 10px;
   margin-right: 10px;
 }
-.max-2{
+
+.max-2 {
   display: flex;
   gap: 10px;
   margin-right: 10px;
 }
-.nor-2 span{
+
+.nor-2 span {
   width: 25px;
   height: 25px;
   background-color: white;
@@ -55,16 +63,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* font-size: 20px; */
 }
-.left-1{
+
+.left-1 {
   width: 50px;
   height: 500px;
   background-color: rgba(0, 0, 0, 0.112);
   margin-left: 10px;
 
 }
-.max-3{
+
+.left-8 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 400px;
+  overflow-y: auto;
+  padding: 10px;
+ 
+
+}
+
+.max-3 {
   width: 50px;
   height: 75px;
   background-color: rgba(0, 0, 0, 0.112);
@@ -72,99 +92,190 @@
   display: flex;
 
 }
-.max-5{
+
+.max-5 {
   display: flex;
 }
-.left-2{
+
+.left-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 25px;
 }
-.max-4{
+
+.max-4 {
   display: flex;
   flex-direction: column;
   align-items: center;
   /* gap: 30px; */
 }
-.left-2 span{
+
+.left-2 span {
   font-size: 23px;
   color: rgba(0, 0, 0, 0.71);
 }
-.left-3{
+
+/* .left-3 {
   width: 350px;
   height: 500px;
+  max-height: 500px;
+  height: 100%;
   background-color: rgba(0, 0, 255, 0.267);
+} */
+.left-3 {
+  width: 350px;
+  height: 500px;
+  max-height: 500px;
+  background-color: rgba(0, 0, 255, 0.267);
+  position: relative; /* Make it a containing block for positioning */
 }
-.left{
-  display: flex;
-}
-.left4{
-  width: 250px;
-  height: 50px;
-  border-radius: 20px;
+
+.left-input {
+  width: 300px;
+  height: 45px;
+  border-radius: 10px;
   outline: 0;
   border: none;
   text-align: center;
- margin-top: 200px;
- margin-left: 85px;
+  position: absolute; /* Position relative to the parent container */
+  bottom: 30px; /* 40px from the bottom */
+  left: 55%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  background-color: #fff;
+  z-index: 1000;
 }
+
+
+.right-3 {
+  /* width: 750px;
+  height: 500px;
+  background-color: rgba(0, 0, 255, 0.267); */
+
+  width: 750px;
+  height: 500px;
+  max-height: 500px;
+  background-color: rgba(0, 0, 255, 0.267);
+  position: relative; /* Make it a containing block for positioning */
+}
+
+.left {
+  display: flex;
+}
+ 
+
+
+.right-4 {
+  width: 550px;
+  height: 45px;
+  border-radius: 10px;
+  outline: 0;
+  border: none;
+  text-align: center;
+  position: absolute; /* Position relative to the parent container */
+  bottom: 30px; /* 40px from the bottom */
+  left: 60%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  background-color: #fff;
+  z-index: 1000;
+}
+
 .left-5 {
-  display: inline-flex; 
+  display: inline-flex;
   gap: 5px;
   color: white;
-  background-color: rgb(8, 12, 111); /* Set background color */
-  padding: 5px; /* Optional: Add some padding for spacing */
-  border-radius: 5px; /* Optional: Add rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  background-color: rgb(8, 12, 111);
+  /* Set background color */
+  padding: 5px;
+  /* Optional: Add some padding for spacing */
+  border-radius: 5px;
+  /* Optional: Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Optional: Add a subtle shadow */
   margin-left: 20px;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 15px;
 }
-.left-5 span{
+
+.left-5 span {
   font-size: 12px;
 }
-.left-5 p{
+
+.left-5 p {
   font-size: 15px;
 }
-/* .left-6{
-  display: flex;
-  flex-direction: column;
-} */
+
 .app-home {
-  margin-bottom: 20px; /* Adds gap between Home and Chaticon */
+  margin-bottom: 20px;
+  /* Adds gap between Home and Chaticon */
 }
 
 .chaticon-container {
   display: flex;
-  justify-content: center; /* Optional: to center the Chaticon */
+  justify-content: center;
+  /* Optional: to center the Chaticon */
 }
+
 /* .left-7{
   width: 30px;
   height: 30px;
   background-color: rgb(35, 11, 222);
 } */
- .app-1{
+.app-1 {
   /* margin-top: 40px; */
   margin-left: 800px;
- }
- .app-2{
+}
+
+.app-2 {
   margin-left: 300px;
-  margin-top: 385px;
- }
- .left-9 {
-  display: inline-flex; 
+  /* margin-top: 60px; */
+}
+
+.home-1 {
+  position: relative;
+  will-change: transform;
+  /* cursor: grab; */
+}
+
+
+
+
+
+
+.left-9 {
+  display: inline-flex;
   gap: 5px;
   color: white;
-  background-color: rgb(8, 12, 111); /* Set background color */
-  padding: 5px; /* Optional: Add some padding for spacing */
-  border-radius: 5px; /* Optional: Add rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  background-color: rgb(8, 12, 111);
+  /* Set background color */
+  padding: 5px;
+  /* Optional: Add some padding for spacing */
+  border-radius: 5px;
+  /* Optional: Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  /* Optional: Add a subtle shadow */
   margin-left: 200px;
   /* margin-top: 170px; */
 }
-.left-10{
+
+.right-15 {
+  display: inline-block; 
+  gap: 5px;
+  color: white;
+  margin: 0 auto; 
+  background-color: rgb(8, 12, 111); 
+  padding: 5px; 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-right: 50px;
+}
+
+
+
+
+
+.left-10 {
   display: flex;
   justify-content: space-between;
   width: 350px;
@@ -173,7 +284,18 @@
   align-items: center;
   margin-top: 5px;
 }
-.max-10{
+
+.right-10 {
+  display: flex;
+  justify-content: space-between;
+  width: 750px;
+  height: 50px;
+  background-color: rgba(128, 128, 128, 0.47);
+  align-items: center;
+  margin-top: 5px;
+}
+
+.max-10 {
   display: flex;
   justify-content: space-between;
   width: 750px;
@@ -182,21 +304,24 @@
   align-items: center;
   margin-top: 1px;
 }
-.left-11{
+
+.left-11 {
   display: flex;
   gap: 5px;
   margin-left: 10px;
 }
-.max-11{
+
+.max-11 {
   display: flex;
   gap: 5px;
   margin-left: 10px;
 }
-.left-11 span{
+
+.left-11 span {
   font-size: 20px;
 }
 
- .max-1{
+.max-1 {
   width: 800px;
   height: 50px;
   background-color: rgb(40, 40, 161);
@@ -205,8 +330,9 @@
   align-items: center;
   /* border-radius: 10px; */
   margin-left: 10px;
- }
- .max-2 span{
+}
+
+.max-2 span {
   width: 25px;
   height: 25px;
   background-color: white;
@@ -216,3 +342,35 @@
   align-items: center;
   /* font-size: 20px; */
 }
+
+
+
+
+
+
+
+/* Cursur Trail */
+.home-1 {
+  background-color: white; /* Background color of the Home component */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cursor-trail {
+  position: fixed;
+  pointer-events: none; /* Allow clicks to pass through */
+  z-index: 9999; /* Ensure the trail is above other elements */
+}
+
+/* .dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(0, 150, 255, 0.7); 
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+} */
+
+
+/* Max Cursur */

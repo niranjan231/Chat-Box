@@ -10,46 +10,37 @@ import { FaUser } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
-import { IoIosHelpCircle } from "react-icons/io";
+import Mscreen from "./Mscreen";
 
-const Leftvar = ({ handleBack }) => {
-    const navigate = useNavigate();
-    const [activeScreen, setActiveScreen] = useState("Nscreen");
-    const [location, setLocation] = useState(null);
-    const [showAccountMenu, setShowAccountMenu] = useState(false);
-    const [showNotificationMenu, setShowNotificationMenu] = useState(false);
-    const [showHelpSection, setShowHelpSection] = useState(false);
-    const [showSettings, setShowSettings] = useState(false); // Track settings visibility
+const Rightvar = ({ handleBack }) => {
+
+
+    
     const [fetchingLocation, setFetchingLocation] = useState(false); // Track if fetching location
+    const navigate = useNavigate();
+    const [activeScreen, setActiveScreen] = useState("Nscreen"); // 'Nscreen' or 'Settings'
+    const [location, setLocation] = useState(null); // To store user location
+    const [showAccountMenu, setShowAccountMenu] = useState(false); // To toggle account menu text
+    const [showNotificationMenu, setShowNotificationMenu] = useState(false); // To toggle notification menu text
 
     const showNscreen = () => {
         setActiveScreen("Nscreen");
-        setShowSettings(false); // Close settings when Nscreen is shown
-        setShowHelpSection(false); // Close help when Nscreen is shown
     };
 
     const toggleSettings = () => {
-        if (showSettings) {
-            setShowSettings(false); // Close settings if it is currently open
-        } else {
-            setShowSettings(true); // Open settings and close help section
-            setShowHelpSection(false); // Ensure help section is closed
-        }
+        setActiveScreen(activeScreen === "Settings" ? "Nscreen" : "Settings");
     };
 
     const handleLocationClick = () => {
         if (navigator.geolocation) {
-            setFetchingLocation(true); // Start fetching location
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     const { latitude, longitude } = position.coords;
-                    setLocation({ latitude, longitude });
-                    setFetchingLocation(false); // Stop fetching location
+                    setLocation({ latitude, longitude }); // Save location to state
                 },
                 (error) => {
                     console.error("Error fetching location: ", error.message);
                     alert("Unable to fetch location. Please check your permissions.");
-                    setFetchingLocation(false); // Stop fetching location
                 }
             );
         } else {
@@ -58,20 +49,11 @@ const Leftvar = ({ handleBack }) => {
     };
 
     const handleAccountClick = () => {
-        setShowAccountMenu(!showAccountMenu);
+        setShowAccountMenu(!showAccountMenu); // Toggle the account menu text
     };
 
     const handleNotificationClick = () => {
-        setShowNotificationMenu(!showNotificationMenu);
-    };
-
-    const handleHelpClick = () => {
-        if (showHelpSection) {
-            setShowHelpSection(false); // Close help if it's currently open
-        } else {
-            setShowHelpSection(true); // Open help section and close settings
-            setShowSettings(false); // Ensure settings section is closed
-        }
+        setShowNotificationMenu(!showNotificationMenu); // Toggle the notification menu text
     };
 
     return (
@@ -81,15 +63,15 @@ const Leftvar = ({ handleBack }) => {
                     <div className="left-2">
                         <span onClick={showNscreen} style={{ cursor: "pointer" }}><FaMessage /></span>
                         <span onClick={toggleSettings} style={{ cursor: "pointer" }}><IoSettingsSharp /></span>
-                        <span onClick={handleHelpClick} style={{ cursor: "pointer" }}><IoIosHelpCircle /></span>
+                        <span><RiLoginCircleFill /></span>
                     </div>
                 </div>
 
-                {showSettings ? (
+                {activeScreen === "Settings" ? (
                     <div className="settings">
                         <h2>Settings</h2>
                         <div
-                            className="left-10"
+                            className="right-10"
                             onClick={handleAccountClick}
                             style={{ cursor: "pointer" }}
                         >
@@ -103,7 +85,11 @@ const Leftvar = ({ handleBack }) => {
                                 Account menu
                             </p>
                         )}
-                        <div className="left-10" onClick={handleNotificationClick} style={{ cursor: "pointer" }}>
+                        <div
+                            className="right-10"
+                            onClick={handleNotificationClick}
+                            style={{ cursor: "pointer" }}
+                        >
                             <div className="left-11">
                                 <span><IoMdNotifications /></span><h6>Notification</h6>
                             </div>
@@ -114,7 +100,7 @@ const Leftvar = ({ handleBack }) => {
                                 <p>Notification menu</p>
                             </div>
                         )}
-                        <div className="left-10" onClick={handleLocationClick} style={{ cursor: "pointer" }}>
+                        <div className="right-10" onClick={handleLocationClick} style={{ cursor: "pointer" }}>
                             <div className="left-11">
                                 <span><FaLocationDot /></span><h6>Location</h6>
                             </div>
@@ -142,19 +128,9 @@ const Leftvar = ({ handleBack }) => {
                             </div>
                         )}
                     </div>
-                ) : null}
-
-                {showHelpSection && ( // Conditionally render the help section
-                    <div style={{ marginTop: "20px", marginLeft: "20px" }}>
-                        <h4>Question 1 here</h4>
-                        <h4>Question 2 here</h4>
-                        <h4>Question 3 here</h4>
-                        <h4>Question 4 here</h4>
-                        <h4>Question 5 here</h4>
-                    </div>
+                ) : (
+                    <Mscreen />
                 )}
-
-                {activeScreen === "Nscreen" && !showSettings && !showHelpSection && <Nscreen />}
             </div>
 
             <span
@@ -167,7 +143,7 @@ const Leftvar = ({ handleBack }) => {
                     borderRadius: "50%",
                     fontSize: "20px",
                     textAlign: "center",
-                    marginLeft: "400px",
+                    marginLeft: "750px",
                     marginTop: "20px",
                     cursor: "pointer",
                 }}
@@ -179,4 +155,4 @@ const Leftvar = ({ handleBack }) => {
     );
 };
 
-export default Leftvar;
+export default Rightvar;
