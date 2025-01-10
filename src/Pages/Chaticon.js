@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css";
 import { IoChatbox } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 

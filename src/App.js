@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import Chaticon from './Chaticon';
+import Chaticon from './Pages/Chaticon';
 import { Routes, Route, useNavigate, Navigate } from "react-router-dom"
-import Home from './Home';
-import Nscreen from "./Nscreen"
-import Max from "./Max";
+import Home from './Component/Home';
+import Nscreen from "./Pages/Nscreen"
+import Max from "./Component/Max";
 import Register from './Auth/Register';
 import Login from './Auth/Login';
 

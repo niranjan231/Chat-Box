@@ -1,11 +1,11 @@
-import "./App.css";
+import "../App.css"
 import { FaMessage } from "react-icons/fa6";
 import { IoSettingsSharp } from "react-icons/io5";
 import { RiLoginCircleFill } from "react-icons/ri";
 import { RxCross1 } from "react-icons/rx";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Nscreen from "./Nscreen";
+import Nscreen from "../Pages/Nscreen";
 import { FaUser } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 import { IoMdNotifications } from "react-icons/io";

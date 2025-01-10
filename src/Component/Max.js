@@ -1,4 +1,4 @@
-import "./App.css";
+import "../App.css"
 import { FaMinus } from "react-icons/fa6";
 import { RiStopMiniLine } from "react-icons/ri";
 import { RxCross2 } from "react-icons/rx";

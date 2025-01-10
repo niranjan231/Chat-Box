@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./App.css"; // Ensure this file exists for your main styles
-import { useNavigate } from "react-router-dom";
-import Normal from "./Normal";
+import "../App.css"
+import Normal from "../Pages/Normal";
 import Leftvar from "./Leftvar";
+import { useNavigate } from "react-router-dom";
 // import "./Home.css";
 
 const Home = () => {
